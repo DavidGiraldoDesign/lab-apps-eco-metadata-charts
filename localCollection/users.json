@@ -7,7 +7,8 @@
       "dob": "1994-03-23",
       "phone": "3162789945",
       "OS": "iOS",
-      "privacyAgreement": true
+      "privacyAgreement": true,
+      "date": "Thu May 18 2022"
     },
     {
       "id": 2,
@@ -16,7 +17,8 @@
       "dob": "1995-03-23",
       "phone": "3162789945",
       "OS": "iOS",
-      "privacyAgreement": true
+      "privacyAgreement": true,
+      "date": "Thu May 18 2022"
     },
     {
       "id": 3,
@@ -25,7 +27,8 @@
       "dob": "1995-03-23",
       "phone": "3162789945",
       "OS": "iOS",
-      "privacyAgreement": true
+      "privacyAgreement": true,
+      "date": "Thu May 18 2022"
     },
     {
       "id": 4,
@@ -34,7 +37,8 @@
       "dob": "1997-02-04",
       "phone": "3162789947",
       "OS": "Android",
-      "privacyAgreement": true
+      "privacyAgreement": true,
+      "date": "Fri May 19 2022"
     },
     {
       "id": 5,
@@ -43,7 +47,38 @@
       "dob": "1997-02-04",
       "phone": "3162789944",
       "OS": "Android",
-      "privacyAgreement": true
+      "privacyAgreement": true,
+      "date": "Fri May 19 2022"
+    },
+    {
+      "id": 6,
+      "name": "Carlos Montoya",
+      "email": "cajomo@gmail.com",
+      "dob": "1997-02-04",
+      "phone": "3162789947",
+      "OS": "Android",
+      "privacyAgreement": true,
+      "date": "Fri May 19 2022"
+    },
+    {
+      "id": 7,
+      "name": "Pedro Gomez",
+      "email": "arturogomez@gmail.com",
+      "dob": "1997-02-04",
+      "phone": "3162789944",
+      "OS": "Android",
+      "privacyAgreement": true,
+      "date": "Fri May 19 2022"
+    },
+    {
+      "id": 8,
+      "name": "San Marcos Lopex",
+      "email": "sanmarcossloca@gmail.com",
+      "dob": "1997-02-04",
+      "phone": "3162789944",
+      "OS": "Android",
+      "privacyAgreement": true,
+      "date": "Fri May 19 2022"
     }
   ]
 }

@@ -2,8 +2,15 @@ class View {
     static barItem = document.querySelector('#myBarChart');
     static doughnutItem = document.querySelector('#myDoughnutChart');
     static lineItem = document.querySelector('#myLineChart');
+    static fiveLeadsTable = document.querySelector('table');
+    //doughnutChart;
+    //barChart;
     constructor() {
-
+        //this.barItem = document.querySelector('#myBarChart');
+        //this.doughnutItem = document.querySelector('#myDoughnutChart');
+        //this.lineItem = document.querySelector('#myLineChart');
+        this.doughnutChart;
+        this.barChart;
     }
 
     getHello() {
@@ -14,10 +21,10 @@ class View {
         const config = {
             type: 'bar',
             data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                labels: ['Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
                 datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
+                    label: 'Total de visitas al día',
+                    data: [0, 0, 0, 0, 0],
                     borderWidth: 1
                 }]
             },
@@ -29,23 +36,22 @@ class View {
                 }
             }
         }
-        new Chart(View.barItem, config);
+        this.barChart = new Chart(View.barItem, config);
+        //this.barChartUpdate(this.barChart);
     }
 
-    getmyDoughnutChart() {
+    getDoughnutChart() {
         const data = {
             labels: [
-                'Red',
-                'Blue',
-                'Yellow'
+                'Android',
+                'iOS'
             ],
             datasets: [{
                 label: 'My First Dataset',
-                data: [300, 50, 100],
+                data: [50, 50],
                 backgroundColor: [
                     'rgb(255, 99, 132)',
-                    'rgb(54, 162, 235)',
-                    'rgb(255, 205, 86)'
+                    'rgb(54, 162, 235)'
                 ],
                 hoverOffset: 4
             }]
@@ -54,11 +60,13 @@ class View {
             type: 'doughnut',
             data: data,
         };
-        new Chart(View.doughnutItem, config);
+
+        this.doughnutChart = new Chart(View.doughnutItem, config);
+        //this.doughnutChartUpdate(this.doughnutChart);
     }
 
     getLineChart() {
-        const labels = ['January','February', 'March', 'April', 'May', 'June', 'July'];
+        const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
         const data = {
             labels: labels,
             datasets: [{
@@ -76,13 +84,40 @@ class View {
         new Chart(View.lineItem, config);
     }
 
-    getDataUpdate(){
+    updateTable(newData){
         
+        console.table(newData);
+        newData.forEach(element => {
+            let row = document.createElement('tr');
+            row.innerHTML = 
+            `<td>${element.name}</td>
+             <td>${element.email}</td>
+             <td>${element.date}</td>
+             `
+            View.fiveLeadsTable.appendChild(row);
+        });
+    }
+
+    updateBarChart(newDataset) {
+        console.log(this.barChart);
+        console.log('Hey within Update barChart');
+        this.barChart.data.datasets[0].data = newDataset.splice(2);
+        //this.barChart.data.labels = newDataset.labels;
+        this.barChart.update();
+    }
+
+    updateDoughnutChart(newDataset) {
+        console.log(this.doughnutChart);
+        console.log('Hey within Update doughnutChart');
+        this.doughnutChart.data.datasets[0].data = newDataset;
+        //this.doughnutChart.data.labels = newDataset.labels;
+        this.doughnutChart.update();
     }
 
     render() {
+
         this.getBarChart();
-        this.getmyDoughnutChart();
+        this.getDoughnutChart();
         this.getLineChart();
 
     }

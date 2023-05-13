@@ -3,57 +3,68 @@
         {
             "id":1,
             "OS": "iOS",
-            "timeStamp":"21:1:8 - 5/11/2023"
+            "timeStamp":"9:1",
+            "date": "Thu May 18 2022"
         },
         {
             "id":2,
             "OS": "iOS",
-            "timeStamp":"21:1:8 - 5/11/2023"
+            "timeStamp":"9:1",
+            "date": "Thu May 18 2022"
         },
         {
             "id":3,
             "OS": "Android",
-            "timeStamp":"21:1:8 - 5/11/2023"
+            "timeStamp":"10:1",
+            "date": "Thu May 18 2022"
         },
         {
             "id":4,
             "OS": "iOS",
-            "timeStamp":"21:1:8 - 5/11/2023"
+            "timeStamp":"11:1",
+            "date": "Thu May 18 2022"
         },
         {
             "id":5,
             "OS": "iOS",
-            "timeStamp":"21:1:8 - 5/11/2023"
+            "timeStamp":"21:1",
+            "date": "Thu May 18 2022"
         },
         {
             "id":6,
             "OS": "Android",
-            "timeStamp":"21:1:8 - 5/11/2023"
+            "timeStamp":"9:1",
+            "date": "Thu May 18 2022"
         },
         {
             "id":7,
             "OS": "iOS",
-            "timeStamp":"21:1:8 - 5/11/2023"
+            "timeStamp":"10:1",
+            "date": "Fri May 19 2022"
         },
         {
             "id":8,
             "OS": "iOS",
-            "timeStamp":"21:1:8 - 5/11/2023"
+            "timeStamp":"11:1",
+            "date": "Fri May 19 2022"
         },
         {
             "id":9,
             "OS": "iOS",
-            "timeStamp":"21:1:8 - 5/11/2023"
+            "timeStamp":"9:1",
+            "date": "Fri May 19 2022"
         },
         {
             "id":10,
             "OS": "iOS",
-            "timeStamp":"21:1:8 - 5/11/2023"
+            "timeStamp":"10:1",
+            "date": "Fri May 19 2022"
         },
         {
             "id":11,
             "OS": "Android",
-            "timeStamp":"21:1:8 - 5/11/2023"
+            "timeStamp":"12:1",
+            "date": "Fri May 19 2022"
         }
     ]
 }
