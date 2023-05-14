@@ -2,83 +2,53 @@
   "users": [
     {
       "id": 1,
-      "name": "John Doe",
-      "email": "johndoe@example.com",
-      "dob": "1994-03-23",
+      "name": "Juan Perez",
+      "email": "juan@gmail.com",
       "phone": "3162789945",
-      "OS": "iOS",
       "privacyAgreement": true,
-      "date": "Thu May 18 2022"
+      "date": "Sun May 14 2023",
+      "timeStamp": "15:55",
+      "OS": "macOS"
     },
     {
       "id": 2,
-      "name": "Jane Smith",
-      "email": "janesmith@example.com",
-      "dob": "1995-03-23",
+      "name": "Pedro Gomez",
+      "email": "prodre@gmail.com",
       "phone": "3162789945",
-      "OS": "iOS",
       "privacyAgreement": true,
-      "date": "Thu May 18 2022"
+      "date": "Sun May 14 2023",
+      "timeStamp": "15:56",
+      "OS": "macOS"
     },
     {
       "id": 3,
-      "name": "David Giraldo",
-      "email": "josedavidgm1995@gmail.com",
-      "dob": "1995-03-23",
+      "name": "Camila Morales",
+      "email": "camila@gmail.com",
       "phone": "3162789945",
-      "OS": "iOS",
       "privacyAgreement": true,
-      "date": "Thu May 18 2022"
+      "date": "Sun May 14 2023",
+      "timeStamp": "15:58",
+      "OS": "macOS"
     },
     {
       "id": 4,
-      "name": "Camilo Montoya",
-      "email": "cajomo@gmail.com",
-      "dob": "1997-02-04",
-      "phone": "3162789947",
-      "OS": "Android",
+      "name": "Kike Perez",
+      "email": "kiek@gmail.com",
+      "phone": "32423452346",
       "privacyAgreement": true,
-      "date": "Fri May 19 2022"
+      "date": "Sun May 14 2023",
+      "timeStamp": "15:59",
+      "OS": "macOS"
     },
     {
       "id": 5,
-      "name": "Arturo Gomez",
-      "email": "arturogomez@gmail.com",
-      "dob": "1997-02-04",
-      "phone": "3162789944",
-      "OS": "Android",
+      "name": "Arturo",
+      "email": "artu@gmail.com",
+      "phone": "3162789945",
       "privacyAgreement": true,
-      "date": "Fri May 19 2022"
-    },
-    {
-      "id": 6,
-      "name": "Carlos Montoya",
-      "email": "cajomo@gmail.com",
-      "dob": "1997-02-04",
-      "phone": "3162789947",
-      "OS": "Android",
-      "privacyAgreement": true,
-      "date": "Fri May 19 2022"
-    },
-    {
-      "id": 7,
-      "name": "Pedro Gomez",
-      "email": "arturogomez@gmail.com",
-      "dob": "1997-02-04",
-      "phone": "3162789944",
-      "OS": "Android",
-      "privacyAgreement": true,
-      "date": "Fri May 19 2022"
-    },
-    {
-      "id": 8,
-      "name": "San Marcos Lopex",
-      "email": "sanmarcossloca@gmail.com",
-      "dob": "1997-02-04",
-      "phone": "3162789944",
-      "OS": "Android",
-      "privacyAgreement": true,
-      "date": "Fri May 19 2022"
+      "date": "Sun May 14 2023",
+      "timeStamp": "16:00",
+      "OS": "macOS"
     }
   ]
 }

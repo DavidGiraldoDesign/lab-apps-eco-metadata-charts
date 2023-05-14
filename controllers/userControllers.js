@@ -2,28 +2,47 @@ import { fs } from "../dependencies.js";
 
 export const postUserData = (req, res) => {
   try {
-    // read existing data from users.json file
-    const data = fs.readFileSync('./localCollection/users.json');
+    const data = fs.readFileSync('./localCollection/users.json'); // read existing data from users.json file
     const jsonData = JSON.parse(data);
-
-    // create new user object from request body
-    const newUser = {
-      id: jsonData.users.length + 1,   // generate new user ID
-      name: req.body.name,
-      email: req.body.email,
-      dob:req.body.dob,
-      phone:req.body.phone,
-      privacyAgreement: req.body.privacyAgreement
+    const { newLead, newInteraction } = req.body;   // deconstruct the new user object from request body
+    const jsonUser = {
+      id: jsonData.users.length + 1, // generate new user ID
+      name: newLead.name,
+      email: newLead.email,
+      phone: newLead.phone,
+      privacyAgreement: newLead.privacyAgreement,
+      date: newLead.date,
+      timeStamp: newLead.timeStamp,
+      OS: newLead.OS
     };
+    jsonData.users.push(jsonUser);  // add new user to existing data
+    fs.writeFileSync('./localCollection/users.json', JSON.stringify(jsonData, null, 2)); // write updated data back to users.json file
+    res.status(201).send({ msn: `User ${jsonUser.id} created` }); // send response indicating successful creation of new user
+  } catch (error) {
+    // handle any errors that occur
+    console.error(error);
+    res.status(500).send('Error adding user');
+  }
+}
 
-    // add new user to existing data
-    jsonData.users.push(newUser);
-
-    // write updated data back to users.json file
-    fs.writeFileSync('./localCollection/users.json', JSON.stringify(jsonData, null, 2));
-
-    // send response indicating successful creation of new user
-    res.status(201).send({ msn: `User ${newUser.id} created` });
+export const postNoLeadInteraction = (req, res) => {
+  
+  //res.send(req.body);
+  try {
+    const data = fs.readFileSync('./localCollection/interactions.json'); // read existing data from users.json file
+    const jsonData = JSON.parse(data);
+    const { noLead } = req.body;   // deconstruct the new user object from request body
+    console.log(noLead);
+    const jsonInteraction = {
+      id: jsonData.interactions.length + 1, // generate new user ID
+      privacyAgreement: noLead.privacyAgreement,
+      date: noLead.date,
+      timeStamp: noLead.timeStamp,
+      OS: noLead.OS
+    };
+    jsonData.interactions.push(jsonInteraction);  // add new user to existing data
+    fs.writeFileSync('./localCollection/interactions.json', JSON.stringify(jsonData, null, 2)); // write updated data back to users.json file
+    res.status(201).send({ msn: `User ${jsonInteraction.id} created` }); // send response indicating successful creation of new user
   } catch (error) {
     // handle any errors that occur
     console.error(error);
