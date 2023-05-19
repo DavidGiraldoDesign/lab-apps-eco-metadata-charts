@@ -1,4 +1,5 @@
 import { fs } from "../dependencies.js";
+import { io } from '../index.js';
 
 export const postUserData = (req, res) => {
   try {
@@ -17,6 +18,9 @@ export const postUserData = (req, res) => {
     };
     jsonData.users.push(jsonUser);  // add new user to existing data
     fs.writeFileSync('./localCollection/users.json', JSON.stringify(jsonData, null, 2)); // write updated data back to users.json file
+    
+    io.emit('real-time-update', { state: true });
+
     res.status(201).send({ msn: `User ${jsonUser.id} created` }); // send response indicating successful creation of new user
   } catch (error) {
     // handle any errors that occur
@@ -26,7 +30,7 @@ export const postUserData = (req, res) => {
 }
 
 export const postNoLeadInteraction = (req, res) => {
-  
+
   //res.send(req.body);
   try {
     const data = fs.readFileSync('./localCollection/interactions.json'); // read existing data from users.json file
@@ -42,6 +46,9 @@ export const postNoLeadInteraction = (req, res) => {
     };
     jsonData.interactions.push(jsonInteraction);  // add new user to existing data
     fs.writeFileSync('./localCollection/interactions.json', JSON.stringify(jsonData, null, 2)); // write updated data back to users.json file
+
+    io.emit('real-time-update', { state: true });
+
     res.status(201).send({ msn: `User ${jsonInteraction.id} created` }); // send response indicating successful creation of new user
   } catch (error) {
     // handle any errors that occur

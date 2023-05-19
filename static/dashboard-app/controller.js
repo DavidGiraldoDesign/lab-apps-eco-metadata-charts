@@ -1,10 +1,8 @@
-function controller(view) {
-    let dashboardLocalData;
-    let popularityOfOS = [];
+const view = new View();
+const URL = `${window.location.hostname}:${window.location.port}`;
+const socket = io(URL, { path: '/real-time' });
 
-    view.onHello = (x) => {
-        console.log('Hello inside the class!')
-    }
+function controller(view, socket) {
 
     view.doughnutChartUpdate = (x) => {
         console.log('Data updated');
@@ -21,19 +19,40 @@ function controller(view) {
         x.update();
     }
 
-
     (async function getDashboardData() {
-        const request = await fetch('http://localhost:5050/dashboard');
+        const request = await fetch(`http://${URL}/dashboard`);
         const data = await request.json();
         kpi = data;
         //popularityOfOS[0] = dashboardLocalData.interactions.filter( inter)
         console.log(kpi);
 
         view.updateTable(kpi.lastFiveLeads);
-        view.updateDoughnutChart([kpi.osPopulatiry["Android"],kpi.osPopulatiry["iOS"]]);
+        view.updateDoughnutChart([kpi.osPopulatiry["Android"], kpi.osPopulatiry["iOS"], kpi.osPopulatiry["Other"]]);
         view.updateBarChart(kpi.visitsByDay);
-        
     })();
+
+    const updateRealTime = async () => {
+        const request = await fetch(`http://${URL}/dashboard`);
+        const data = await request.json();
+        const kpi = data;
+        view.updateTable(kpi.lastFiveLeads);
+        view.updateDoughnutChart([kpi.osPopulatiry["Android"], kpi.osPopulatiry["iOS"], kpi.osPopulatiry["Other"]]);
+        view.updateBarChart(kpi.visitsByDay);
+        console.log('Hello from updateRealTime');
+    }
+
+    socket.on('real-time-update', (data) => {
+        console.log('Some update happen!');
+        updateRealTime();
+    });
+
+    view.render();
+
+}
+controller(view, socket);
+
+
+/*
 
     setInterval(() => {
         const min = 10;
@@ -50,12 +69,4 @@ function controller(view) {
         //view.updateBarChart({ data, labels });
         //view.updateDoughnutChart({ data, labels });
     }, 2000);
-
-    //view.getHello();
-    //view.getDataUpdate();
-    view.render();
-
-}
-
-let view = new View();
-controller(view);
+*/

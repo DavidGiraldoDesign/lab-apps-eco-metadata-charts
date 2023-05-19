@@ -5,7 +5,12 @@ export function getOSPopularity(interactions) {
     const android_IndInteractions = interactions.filter(interaction => {
         return interaction.OS === "Android"
     });
-    return { "iOS": iOS_Interactions.length, "Android": android_IndInteractions.length }
+    const other_IndInteractions = interactions.filter(interaction => {
+        if (interaction.OS != "iOS" && interaction.OS != "Android") {
+            return true;
+        }
+    });
+    return { "iOS": iOS_Interactions.length, "Android": android_IndInteractions.length, "Other": other_IndInteractions.length }
     console.table({
         "iOS:": iOS_Interactions.length,
         "Android:": android_IndInteractions.length,

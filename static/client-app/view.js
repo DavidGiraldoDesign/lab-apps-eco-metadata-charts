@@ -109,11 +109,10 @@ class View {
         View.noLeadBtn.addEventListener('click', (e) => {
             console.log('No Lead');
             let OS = this.getBrowserOS();
-            let privacyAgreement = View.inputPrivacy.checked;
             let date = this.getCurrentDate();
             let timeStamp = this.getCurrentHour();
 
-            let noLead = { privacyAgreement, OS, date, timeStamp };
+            let noLead = { OS, date, timeStamp };
 
             this.resetInputs();
             this.onNoLead(noLead);

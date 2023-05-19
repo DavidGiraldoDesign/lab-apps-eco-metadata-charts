@@ -49,6 +49,36 @@
       "date": "Sun May 14 2023",
       "timeStamp": "16:00",
       "OS": "macOS"
+    },
+    {
+      "id": 6,
+      "name": "Ximena",
+      "email": "xime@gmai.com",
+      "phone": "3162789945",
+      "privacyAgreement": true,
+      "date": "Thu May 18 2023",
+      "timeStamp": "23:25",
+      "OS": "macOS"
+    },
+    {
+      "id": 7,
+      "name": "Johana",
+      "email": "joha@gmail.com",
+      "phone": "3162789945",
+      "privacyAgreement": true,
+      "date": "Thu May 18 2023",
+      "timeStamp": "23:26",
+      "OS": "macOS"
+    },
+    {
+      "id": 8,
+      "name": "Daniel",
+      "email": "dani@gmail.com",
+      "phone": "3162789945",
+      "privacyAgreement": true,
+      "date": "Thu May 18 2023",
+      "timeStamp": "23:42",
+      "OS": "macOS"
     }
   ]
 }
